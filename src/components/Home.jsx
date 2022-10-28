@@ -4,7 +4,8 @@ import { Tab } from "@headlessui/react";
 import { useState } from "react";
 import { RadioGroup } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/24/outline";
-import Carosel from "./Carosel";
+import SliderHome from "./SliderHome";
+
 
 const plans = [
   {
@@ -87,8 +88,8 @@ export default function Home(props) {
 
   return (
     <div className="">
-      <Carosel />
-      <div className="md:grid grid-cols-2 md">
+      <SliderHome/>
+      <div className="md:grid grid-cols-2 ">
         <div className="">
           <div className="md:flex md:gap-6 items-center justify-center mt-5">
             <div className="mt-5 md:col-span-2 md:mt-0">
@@ -228,9 +229,8 @@ export default function Home(props) {
                     <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
                       <span>What is your refund policy?</span>
                       <ChevronUpIcon
-                        className={`${
-                          open ? "rotate-180 transform" : ""
-                        } h-5 w-5 text-purple-500`}
+                        className={`${open ? "rotate-180 transform" : ""
+                          } h-5 w-5 text-purple-500`}
                       />
                     </Disclosure.Button>
                     <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
@@ -247,9 +247,8 @@ export default function Home(props) {
                     <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
                       <span>Do you offer technical support?</span>
                       <ChevronUpIcon
-                        className={`${
-                          open ? "rotate-180 transform" : ""
-                        } h-5 w-5 text-purple-500`}
+                        className={`${open ? "rotate-180 transform" : ""
+                          } h-5 w-5 text-purple-500`}
                       />
                     </Disclosure.Button>
                     <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
@@ -271,14 +270,12 @@ export default function Home(props) {
                         key={plan.name}
                         value={plan}
                         className={({ active, checked }) =>
-                          `${
-                            active
-                              ? "ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-sky-300"
-                              : ""
+                          `${active
+                            ? "ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-sky-300"
+                            : ""
                           }
-                  ${
-                    checked ? "bg-sky-900 bg-opacity-75 text-white" : "bg-white"
-                  }
+                  ${checked ? "bg-sky-900 bg-opacity-75 text-white" : "bg-white"
+                          }
                     relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md focus:outline-none`
                         }
                       >
@@ -289,17 +286,15 @@ export default function Home(props) {
                                 <div className="text-sm">
                                   <RadioGroup.Label
                                     as="p"
-                                    className={`font-medium  ${
-                                      checked ? "text-white" : "text-gray-900"
-                                    }`}
+                                    className={`font-medium  ${checked ? "text-white" : "text-gray-900"
+                                      }`}
                                   >
                                     {plan.name}
                                   </RadioGroup.Label>
                                   <RadioGroup.Description
                                     as="span"
-                                    className={`inline ${
-                                      checked ? "text-sky-100" : "text-gray-500"
-                                    }`}
+                                    className={`inline ${checked ? "text-sky-100" : "text-gray-500"
+                                      }`}
                                   >
                                     <span>
                                       {plan.ram}/{plan.cpus}
